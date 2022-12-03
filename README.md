@@ -1,5 +1,7 @@
 # NKZSoft.Service.Configuration.Grpc
 
+[![Nuget](https://img.shields.io/nuget/v/NKZSoft.Service.Configuration.Grpc?style=plastic)](https://www.nuget.org/packages/NKZSoft.Service.Configuration.Grpc/)
+
 This library contains the following components:
 - Global error handlers 
 
