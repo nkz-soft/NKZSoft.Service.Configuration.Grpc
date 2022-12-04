@@ -4,6 +4,22 @@ using Exceptions;
 
 public class GrpcClientExceptionInterceptor : Interceptor
 {
+    private readonly IErrorHandlingMethod _errorHandlingMethod;
+
+    protected GrpcClientExceptionInterceptor(IErrorHandlingMethod errorHandlingMethod)
+    {
+        _errorHandlingMethod = errorHandlingMethod;
+    }
+
+    public static GrpcClientExceptionInterceptor Create(ErrorHandlingMethod errorHandlingMethod = ErrorHandlingMethod.ThrowException) =>
+        new GrpcClientExceptionInterceptor(
+            errorHandlingMethod switch
+            {
+                ErrorHandlingMethod.ThrowException => new ThrowExceptionHandler(),
+                ErrorHandlingMethod.ReturnResult => new ResultExceptionHandler(),
+                _ => throw new ArgumentException("Invalid enum value", nameof(errorHandlingMethod))
+            });
+
     public override Task<TResponse> UnaryServerHandler<TRequest, TResponse>(TRequest request, ServerCallContext context,
         UnaryServerMethod<TRequest, TResponse> continuation)
 
@@ -14,8 +30,7 @@ public class GrpcClientExceptionInterceptor : Interceptor
         }
         catch (RpcException ex)
         {
-            GrpcExceptionHelper.PrepareClientException(ex);
-            throw;
+            return _errorHandlingMethod.Handle<TRequest, TResponse>(ex) ?? throw ex;
         }
     }
 
@@ -29,8 +44,7 @@ public class GrpcClientExceptionInterceptor : Interceptor
         }
         catch (RpcException ex)
         {
-            GrpcExceptionHelper.PrepareClientException(ex);
-            throw;
+            return _errorHandlingMethod.Handle<TRequest, TResponse>(ex) ?? throw ex;
         }
     }
 

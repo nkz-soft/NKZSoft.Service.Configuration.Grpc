@@ -11,5 +11,6 @@ global using Grpc.Core.Interceptors;
 global using Microsoft.AspNetCore.Builder;
 global using Microsoft.AspNetCore.Routing;
 global using Microsoft.Extensions.DependencyInjection;
+global using ProtoBuf;
 global using ProtoBuf.Grpc.ClientFactory;
 global using ProtoBuf.Grpc.Server;

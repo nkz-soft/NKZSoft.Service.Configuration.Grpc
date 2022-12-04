@@ -17,4 +17,8 @@
     <PackageReference Include="protobuf-net.Grpc.ClientFactory" Version="1.0.179" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Result" />
+  </ItemGroup>
+
 </Project>
