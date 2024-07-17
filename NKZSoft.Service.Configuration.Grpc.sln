@@ -19,6 +19,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcTestServer", "tests\Grp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcTestServerTests", "tests\GrpcTestServerTests\GrpcTestServerTests.csproj", "{5EBC5460-EB5C-43C3-922C-19C759F05055}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deployment", "deployment", "{282CE27F-7149-4ABA-9F11-92F8F031774A}"
+	ProjectSection(SolutionItems) = preProject
+		.github\dependabot.yml = .github\dependabot.yml
+		.github\ISSUE_TEMPLATE\bug_report.md = .github\ISSUE_TEMPLATE\bug_report.md
+		.github\ISSUE_TEMPLATE\feature_request.md = .github\ISSUE_TEMPLATE\feature_request.md
+		.github\release-drafter.yml = .github\release-drafter.yml
+		.github\workflows\build.yaml = .github\workflows\build.yaml
+		.github\workflows\publish-nuget.yaml = .github\workflows\publish-nuget.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

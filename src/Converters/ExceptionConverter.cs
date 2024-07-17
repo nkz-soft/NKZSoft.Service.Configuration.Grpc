@@ -16,7 +16,7 @@ internal sealed class ExceptionConverter : JsonConverter<Exception>
         {
             if (reader.TokenType == JsonTokenType.EndObject)
             {
-                return new Exception(exeExceptionInfo.Message);
+                return new JsonException(exeExceptionInfo.Message);
             }
 
             if (reader.TokenType == JsonTokenType.PropertyName)
