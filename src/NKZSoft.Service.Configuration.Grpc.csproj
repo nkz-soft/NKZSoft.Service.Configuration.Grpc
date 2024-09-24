@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>net7.0;net8.0</TargetFrameworks>
-    <Version>1.1.0</Version>
-    <PackageVersion>1.1.0</PackageVersion>
+    <Version>1.2.0</Version>
+    <PackageVersion>1.2.0</PackageVersion>
     <Description>Provides the configuration for Grpc</Description>
     <Copyright>Copyright © 2024</Copyright>
     <RepositoryUrl>https://github.com/nkz-soft/NKZSoft.Service.Configuration.Grpc</RepositoryUrl>
@@ -18,7 +18,6 @@
     <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
     <PackageReference Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.1.1" />
     <PackageReference Include="protobuf-net.Grpc.ClientFactory" Version="1.1.1" />
-    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
   </ItemGroup>
 
 </Project>

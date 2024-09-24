@@ -9,7 +9,7 @@ internal static class GrpcExceptionHelper
     private static JsonSerializerOptions JsonSerializerOptions
         => new JsonSerializerOptions
         {
-            Converters = { new ExceptionConverter() }
+            Converters = { new ExceptionConverter() },
         };
 
     public static RpcException PrepareServerException(Exception ex)

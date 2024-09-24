@@ -30,7 +30,8 @@ public class ServerTests
     [Fact]
     public async Task TestPingException()
     {
-        async Task Act() => await _clientService.Ping(new TestRequest() { Ping = WrongTestString });
+        async Task Act() => await _clientService.Ping(new TestRequest() { Ping = WrongTestString })
+            .ConfigureAwait(false);
 
         var exception = await Assert.ThrowsAsync<RpcException>(Act);
 
@@ -39,5 +40,3 @@ public class ServerTests
         exception.InnerException.Message.Should().StartWith("The ping argument has an invalid value");
     }
 }
-
-

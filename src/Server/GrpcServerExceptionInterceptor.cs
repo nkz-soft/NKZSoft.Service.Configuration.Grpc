@@ -10,7 +10,7 @@ public class GrpcServerExceptionInterceptor : Interceptor
     {
         try
         {
-            return await base.UnaryServerHandler(request, context, continuation);
+            return await base.UnaryServerHandler(request, context, continuation).ConfigureAwait(false);
         }
         catch (Exception ex)
         {
@@ -24,7 +24,7 @@ public class GrpcServerExceptionInterceptor : Interceptor
     {
         try
         {
-            return await base.ClientStreamingServerHandler(requestStream, context, continuation);
+            return await base.ClientStreamingServerHandler(requestStream, context, continuation).ConfigureAwait(false);
         }
         catch (Exception ex)
         {
@@ -39,7 +39,8 @@ public class GrpcServerExceptionInterceptor : Interceptor
     {
         try
         {
-            await base.ServerStreamingServerHandler(request, responseStream, context, continuation);
+            await base.ServerStreamingServerHandler(request, responseStream, context, continuation)
+                .ConfigureAwait(false);
         }
         catch (Exception ex)
         {
@@ -47,14 +48,16 @@ public class GrpcServerExceptionInterceptor : Interceptor
         }
     }
 
-    public override async Task DuplexStreamingServerHandler<TRequest, TResponse>(IAsyncStreamReader<TRequest> requestStream,
+    public override async Task DuplexStreamingServerHandler<TRequest, TResponse>(
+        IAsyncStreamReader<TRequest> requestStream,
         IServerStreamWriter<TResponse> responseStream,
         ServerCallContext context,
         DuplexStreamingServerMethod<TRequest, TResponse> continuation)
     {
         try
         {
-            await base.DuplexStreamingServerHandler(requestStream, responseStream, context, continuation);
+            await base.DuplexStreamingServerHandler(requestStream, responseStream, context, continuation)
+                .ConfigureAwait(false);
         }
         catch (Exception ex)
         {

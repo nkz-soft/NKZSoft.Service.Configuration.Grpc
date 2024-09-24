@@ -16,12 +16,12 @@ public class GrpcClientExceptionInterceptor : Interceptor
     /// <param name="context">The server call context.</param>
     /// <param name="continuation">The continuation of the server call.</param>
     /// <returns>A Task representing the asynchronous operation.</returns>
-    public override Task<TResponse> UnaryServerHandler<TRequest, TResponse>(TRequest request, ServerCallContext context,
+    public override async Task<TResponse> UnaryServerHandler<TRequest, TResponse>(TRequest request, ServerCallContext context,
         UnaryServerMethod<TRequest, TResponse> continuation)
     {
         try
         {
-            return base.UnaryServerHandler(request, context, continuation);
+            return await base.UnaryServerHandler(request, context, continuation).ConfigureAwait(false);
         }
         catch (RpcException ex)
         {
@@ -146,7 +146,7 @@ public class GrpcClientExceptionInterceptor : Interceptor
     {
         try
         {
-            return await resposta;
+            return await resposta.ConfigureAwait(false);
         }
         catch (RpcException ex)
         {

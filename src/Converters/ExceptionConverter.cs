@@ -35,7 +35,6 @@ internal sealed class ExceptionConverter : JsonConverter<Exception>
         throw new JsonException();
     }
 
-
     public override void Write(Utf8JsonWriter writer, Exception value, JsonSerializerOptions options)
     {
         writer.WriteStartObject();
