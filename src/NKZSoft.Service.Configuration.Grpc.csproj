@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>net7.0;net8.0</TargetFrameworks>
-    <Version>1.2.0</Version>
-    <PackageVersion>1.2.0</PackageVersion>
+    <Version>1.2.1</Version>
+    <PackageVersion>1.2.1</PackageVersion>
     <Description>Provides the configuration for Grpc</Description>
     <Copyright>Copyright © 2024</Copyright>
     <RepositoryUrl>https://github.com/nkz-soft/NKZSoft.Service.Configuration.Grpc</RepositoryUrl>
