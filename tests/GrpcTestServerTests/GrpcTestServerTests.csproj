@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Grpc.Net.ClientFactory" Version="2.66.0" />
+        <PackageReference Include="Grpc.Net.ClientFactory" Version="2.67.0" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.7" Condition="'$(TargetFramework)' == 'net7.0'" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.7" Condition="'$(TargetFramework)' == 'net8.0'" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
