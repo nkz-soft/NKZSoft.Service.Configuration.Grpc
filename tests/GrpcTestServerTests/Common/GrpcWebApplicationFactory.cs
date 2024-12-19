@@ -1,5 +1,6 @@
 ﻿namespace GrpcTestServerTests.Common;
 
+using Microsoft.AspNetCore.Mvc.Testing;
 using NKZSoft.Service.Configuration.Grpc.Client;
 
 public sealed class GrpcWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup> where TStartup : class

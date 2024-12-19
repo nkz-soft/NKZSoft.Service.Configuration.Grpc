@@ -2,7 +2,7 @@
 
 using Models;
 
-[ServiceContract]
+[System.ServiceModel.ServiceContract]
 public interface ITestService
 {
     [OperationContract]
