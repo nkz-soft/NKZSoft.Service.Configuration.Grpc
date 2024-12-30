@@ -25,8 +25,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All"/>
-    <PackageReference Include="Meziantou.Analyzer" Version="2.0.173" PrivateAssets="All"/>
-    <PackageReference Include="Roslynator.Analyzers" Version="4.12.9" PrivateAssets="All"/>
+    <PackageReference Include="Meziantou.Analyzer" Version="2.0.184" PrivateAssets="All"/>
+    <PackageReference Include="Roslynator.Analyzers" Version="4.12.10" PrivateAssets="All"/>
   </ItemGroup>
 
 </Project>
