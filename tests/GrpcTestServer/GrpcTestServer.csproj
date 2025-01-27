@@ -8,7 +8,7 @@
     <ItemGroup>
       <PackageReference Include="Google.Protobuf" Version="3.29.2" />
       <PackageReference Include="System.ServiceModel.Primitives" Version="8.1.0" />
-      <PackageReference Include="protobuf-net" Version="3.2.45" />
+      <PackageReference Include="protobuf-net" Version="3.2.46" />
       <PackageReference Update="Meziantou.Analyzer" Version="2.0.182" />
       <PackageReference Update="Roslynator.Analyzers" Version="4.12.10" />
     </ItemGroup>
